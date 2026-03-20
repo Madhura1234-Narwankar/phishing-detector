@@ -104,6 +104,13 @@ def api_predict():
 def home():
     urls = get_all_urls()
     safe_count, phishing_count = get_stats()
+@app.route('/batch')
+def batch():
+    return render_template('batch.html')
+
+@app.route('/csv')
+def csv_upload():
+    return render_template('csv.html')
 
     return render_template_string("""
 <!DOCTYPE html>
